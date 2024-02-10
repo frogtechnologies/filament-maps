@@ -14,7 +14,7 @@ trait HasDarkModeTiles
             'x-on:dark-mode-toggled.window' => 'setTileLayer($event.detail)',
         ]);
 
-        $this->tileLayerUrl =  [
+        $this->tileLayerUrl = [
             'light' => $this->lightModeTileLayerUrl,
             'dark' => $this->darkModeTileLayerUrl,
         ];
@@ -25,7 +25,7 @@ trait HasDarkModeTiles
             ],
             'dark' => [
                 'attribution' => '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-            ]
+            ],
         ];
 
         $this->tileLayerMode = 'light';

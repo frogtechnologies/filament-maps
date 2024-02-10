@@ -18,7 +18,7 @@ trait HasPolygones
     protected function preparePolygones(array $data): array
     {
         return collect($data)
-            ->map(function (array | Polygone $item) {
+            ->map(function (array|Polygone $item) {
                 if ($item instanceof Polygone) {
                     return $item->toArray();
                 }
@@ -38,7 +38,7 @@ trait HasPolygones
     public function removePolygone(string $id): self
     {
         $this->polygones = collect($this->polygones)
-            ->filter(fn($polygone) => $polygone['id'] !== $id)
+            ->filter(fn ($polygone) => $polygone['id'] !== $id)
             ->toArray();
 
         return $this;
@@ -47,7 +47,7 @@ trait HasPolygones
     public function updatePolygone(Polygone $polygone): self
     {
         $this->polygones = collect($this->polygones)
-            ->map(fn($m) => $m['id'] === $polygone->getName() ? $polygone->toArray() : $m)
+            ->map(fn ($m) => $m['id'] === $polygone->getName() ? $polygone->toArray() : $m)
             ->toArray();
 
         return $this;

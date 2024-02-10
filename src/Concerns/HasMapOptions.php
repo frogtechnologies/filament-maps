@@ -29,5 +29,4 @@ trait HasMapOptions
     {
         return $this->mapOptions;
     }
-
 }

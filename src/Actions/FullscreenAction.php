@@ -2,12 +2,6 @@
 
 namespace Webbingbrasil\FilamentMaps\Actions;
 
-use Closure;
-use Filament\Support\Actions\Concerns;
-use Filament\Support\Concerns\Configurable;
-use Filament\Support\Concerns\EvaluatesClosures;
-use Illuminate\Support\Facades\Blade;
-
 class FullscreenAction extends Action
 {
     protected string $view = 'filament-maps::fullscreen-action';

@@ -12,17 +12,17 @@ use Webbingbrasil\FilamentMaps\Concerns\HasTooltip;
 class Circle implements Arrayable
 {
     use EvaluatesClosures;
+    use HasOptions;
     use HasPopup;
     use HasTooltip;
-    use HasOptions;
 
     protected string $name;
 
-    protected float | Closure $lat;
+    protected float|Closure $lat;
 
-    protected float | Closure $lng;
+    protected float|Closure $lng;
 
-    protected string | Closure | null $callback = '';
+    protected string|Closure|null $callback = '';
 
     final public function __construct(string $name)
     {
@@ -52,7 +52,7 @@ class Circle implements Arrayable
         return $this->name;
     }
 
-    public function lat(float| Closure $lat): static
+    public function lat(float|Closure $lat): static
     {
         $this->lat = $lat;
 
@@ -64,7 +64,7 @@ class Circle implements Arrayable
         return $this->evaluate($this->lat);
     }
 
-    public function lng(float| Closure $lng): static
+    public function lng(float|Closure $lng): static
     {
         $this->lng = $lng;
 
@@ -76,8 +76,7 @@ class Circle implements Arrayable
         return $this->evaluate($this->lng);
     }
 
-
-    public function callback(string | Closure | null  $callback): static
+    public function callback(string|Closure|null $callback): static
     {
         $this->callback = $callback;
 
@@ -96,7 +95,7 @@ class Circle implements Arrayable
             'lat' => $this->getLat(),
             'lng' => $this->getLng(),
             'popup' => $this->getPopup(),
-            'tooltip'=> $this->getTooltip(),
+            'tooltip' => $this->getTooltip(),
             'options' => $this->getOptions(),
         ];
     }

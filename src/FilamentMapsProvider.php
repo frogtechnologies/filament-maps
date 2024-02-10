@@ -2,9 +2,9 @@
 
 namespace Webbingbrasil\FilamentMaps;
 
+use BladeUI\Icons\Factory;
 use Filament\Facades\Filament;
 use Illuminate\Contracts\View\View;
-use BladeUI\Icons\Factory;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

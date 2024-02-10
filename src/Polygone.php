@@ -17,7 +17,7 @@ class Polygone implements Arrayable
 
     protected string $name;
 
-    protected array | Closure $latlngs;
+    protected array|Closure $latlngs;
 
     final public function __construct(string $name)
     {
@@ -47,7 +47,7 @@ class Polygone implements Arrayable
         return $this->name;
     }
 
-    public function latlngs(array| Closure $latlngs): static
+    public function latlngs(array|Closure $latlngs): static
     {
         $this->latlngs = $latlngs;
 
@@ -66,7 +66,7 @@ class Polygone implements Arrayable
             'latlngs' => $this->getLatlngs(),
             'options' => $this->getOptions(),
             'popup' => $this->getPopup(),
-            'tooltip'=> $this->getTooltip(),
+            'tooltip' => $this->getTooltip(),
         ];
     }
 }

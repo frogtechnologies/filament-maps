@@ -5,11 +5,11 @@ namespace Webbingbrasil\FilamentMaps\Concerns;
 use Closure;
 use Filament\Forms;
 use Filament\Pages\Contracts\HasFormActions;
-use Illuminate\Support\Str;
-use Webbingbrasil\FilamentMaps\Actions\Action;
 use Filament\Support\Exceptions\Cancel;
 use Filament\Support\Exceptions\Halt;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use Webbingbrasil\FilamentMaps\Actions\Action;
 
 trait HasActions
 {
@@ -19,11 +19,11 @@ trait HasActions
 
     protected ?array $cachedActions = null;
 
-    protected array | Closure $actions = [];
+    protected array|Closure $actions = [];
 
     public function getModalActionId(): string
     {
-        return Str::afterLast($this->getName(), '.') . '.modal-action';
+        return Str::afterLast($this->getName(), '.').'.modal-action';
     }
 
     public function callMountedAction(?string $arguments = null)
@@ -194,7 +194,7 @@ trait HasActions
             ->context($this->mountedAction);
     }
 
-    protected function getMountedActionFormModel(): Model | string | null
+    protected function getMountedActionFormModel(): Model|string|null
     {
         return null;
     }
@@ -212,7 +212,7 @@ trait HasActions
         return null;
     }
 
-    public function actions(array | Closure $actions): self
+    public function actions(array|Closure $actions): self
     {
         $this->actions = $actions;
 

@@ -19,7 +19,7 @@ trait HasMarkers
     protected function prepareMarkers(array $data): array
     {
         return collect($data)
-            ->map(function (array | Marker | MarkerCluster $item) {
+            ->map(function (array|Marker|MarkerCluster $item) {
                 if ($item instanceof Marker || $item instanceof MarkerCluster) {
                     return $item->toArray();
                 }
@@ -39,7 +39,7 @@ trait HasMarkers
     public function removeMarker(string $id): self
     {
         $this->markers = collect($this->markers)
-            ->filter(fn($marker) => $marker['id'] !== $id)
+            ->filter(fn ($marker) => $marker['id'] !== $id)
             ->toArray();
 
         return $this;
@@ -48,7 +48,7 @@ trait HasMarkers
     public function updateMarker(Marker $marker): self
     {
         $this->markers = collect($this->markers)
-            ->map(fn($m) => $m['id'] === $marker->getName() ? $marker->toArray() : $m)
+            ->map(fn ($m) => $m['id'] === $marker->getName() ? $marker->toArray() : $m)
             ->toArray();
 
         return $this;

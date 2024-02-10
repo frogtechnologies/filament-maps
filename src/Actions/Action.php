@@ -8,27 +8,27 @@ use Filament\Support\Actions\Action as BaseAction;
 use Filament\Support\Actions\Concerns;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Webbingbrasil\FilamentMaps\Actions\Concerns\HasCallback;
 use Webbingbrasil\FilamentMaps\Actions\Concerns\BelongsToLivewire;
+use Webbingbrasil\FilamentMaps\Actions\Concerns\HasCallback;
 
 class Action extends BaseAction
 {
+    use BelongsToLivewire;
     use Concerns\CanBeDisabled;
     use Concerns\CanBeOutlined;
-    use Concerns\CanOpenUrl;
     use Concerns\CanEmitEvent;
+    use Concerns\CanOpenUrl;
     use Concerns\CanSubmitForm;
     use Concerns\HasKeyBindings;
     use Concerns\HasTooltip;
     use Concerns\InteractsWithRecord;
     use HasCallback;
-    use BelongsToLivewire;
 
     protected string $position = 'topleft';
 
     protected string $view = 'filament-maps::button-action';
 
-    protected string | Closure | null  $color = 'secondary';
+    protected string|Closure|null $color = 'secondary';
 
     protected function getLivewireCallActionName(): string
     {
@@ -72,6 +72,6 @@ class Action extends BaseAction
 
     public function getMapActionId(): string
     {
-        return Str::afterLast($this->getLivewire()->getName(), '.') . '.' . $this->getName();
+        return Str::afterLast($this->getLivewire()->getName(), '.').'.'.$this->getName();
     }
 }

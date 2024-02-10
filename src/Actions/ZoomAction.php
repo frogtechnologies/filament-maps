@@ -2,17 +2,12 @@
 
 namespace Webbingbrasil\FilamentMaps\Actions;
 
-use Closure;
-use Filament\Support\Actions\Concerns;
-use Filament\Support\Concerns\Configurable;
-use Filament\Support\Concerns\EvaluatesClosures;
-use Illuminate\Support\Facades\Blade;
-
 class ZoomAction extends Action
 {
     protected string $view = 'filament-maps::zoom-action';
 
     protected int $zoom = 1;
+
     protected string $type = '+';
 
     protected function setUp(): void

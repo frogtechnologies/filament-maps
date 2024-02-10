@@ -6,7 +6,7 @@ trait HasTileLayer
 {
     protected string $tileLayerMode = 'default';
 
-    protected string | array $tileLayerUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    protected string|array $tileLayerUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 
     protected array $tileLayerOptions = [
         'attribution' => '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
@@ -19,7 +19,7 @@ trait HasTileLayer
         return $this;
     }
 
-    public function tileLayerUrl(string | array $tileLayerUrl): static
+    public function tileLayerUrl(string|array $tileLayerUrl): static
     {
         $this->tileLayerUrl = $tileLayerUrl;
 
@@ -33,9 +33,9 @@ trait HasTileLayer
         return $this;
     }
 
-    public function getTileLayerUrl(): string | array
+    public function getTileLayerUrl(): string|array
     {
-        if(is_array($this->tileLayerUrl)) {
+        if (is_array($this->tileLayerUrl)) {
             return $this->tileLayerUrl;
         }
 

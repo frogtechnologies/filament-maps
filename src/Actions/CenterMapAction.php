@@ -2,12 +2,6 @@
 
 namespace Webbingbrasil\FilamentMaps\Actions;
 
-use Closure;
-use Filament\Support\Actions\Concerns;
-use Filament\Support\Concerns\Configurable;
-use Filament\Support\Concerns\EvaluatesClosures;
-use Illuminate\Support\Facades\Blade;
-
 class CenterMapAction extends Action
 {
     protected array $centerTo = [0, 0];
@@ -25,7 +19,7 @@ class CenterMapAction extends Action
         $this->label(__('Center map'));
         $this->icon('filamentmapsicon-o-arrows-pointing-in');
         $this->callback(function () {
-            if (!empty($this->fitBounds)) {
+            if (! empty($this->fitBounds)) {
                 return $this->getFitBoundsAction();
             }
 
@@ -115,5 +109,4 @@ class CenterMapAction extends Action
             }
         JS;
     }
-
 }

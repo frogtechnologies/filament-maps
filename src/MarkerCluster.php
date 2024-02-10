@@ -2,12 +2,9 @@
 
 namespace Webbingbrasil\FilamentMaps;
 
-use Closure;
 use Exception;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Illuminate\Contracts\Support\Arrayable;
-use Webbingbrasil\FilamentMaps\Concerns\HasPopup;
-use Webbingbrasil\FilamentMaps\Concerns\HasTooltip;
 
 class MarkerCluster implements Arrayable
 {
@@ -35,7 +32,7 @@ class MarkerCluster implements Arrayable
         return [
             'type' => 'cluster',
             'markers' => array_map(
-                function (array | Marker $marker) {
+                function (array|Marker $marker) {
                     return $marker instanceof Marker ? $marker->toArray() : $marker;
                 },
                 $this->markers

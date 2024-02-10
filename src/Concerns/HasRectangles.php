@@ -18,7 +18,7 @@ trait HasRectangles
     protected function prepareRectangles(array $data): array
     {
         return collect($data)
-            ->map(function (array | Rectangle $item) {
+            ->map(function (array|Rectangle $item) {
                 if ($item instanceof Rectangle) {
                     return $item->toArray();
                 }
@@ -38,7 +38,7 @@ trait HasRectangles
     public function removeRectangle(string $id): self
     {
         $this->rectangles = collect($this->rectangles)
-            ->filter(fn($rectangle) => $rectangle['id'] !== $id)
+            ->filter(fn ($rectangle) => $rectangle['id'] !== $id)
             ->toArray();
 
         return $this;
@@ -47,7 +47,7 @@ trait HasRectangles
     public function updateRectangle(Rectangle $rectangle): self
     {
         $this->rectangles = collect($this->rectangles)
-            ->map(fn($m) => $m['id'] === $rectangle->getName() ? $rectangle->toArray() : $m)
+            ->map(fn ($m) => $m['id'] === $rectangle->getName() ? $rectangle->toArray() : $m)
             ->toArray();
 
         return $this;

@@ -6,9 +6,9 @@ use Closure;
 
 trait HasCallback
 {
-    protected Closure | string | null $callback = null;
+    protected Closure|string|null $callback = null;
 
-    public function callback(Closure | string | null $callback): static
+    public function callback(Closure|string|null $callback): static
     {
         $this->callback = $callback;
 

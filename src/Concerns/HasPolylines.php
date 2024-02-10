@@ -18,7 +18,7 @@ trait HasPolylines
     protected function preparePolylines(array $data): array
     {
         return collect($data)
-            ->map(function (array | Polyline $item) {
+            ->map(function (array|Polyline $item) {
                 if ($item instanceof Polyline) {
                     return $item->toArray();
                 }
@@ -38,7 +38,7 @@ trait HasPolylines
     public function removePolyline(string $id): self
     {
         $this->polylines = collect($this->polylines)
-            ->filter(fn($polyline) => $polyline['id'] !== $id)
+            ->filter(fn ($polyline) => $polyline['id'] !== $id)
             ->toArray();
 
         return $this;
@@ -47,7 +47,7 @@ trait HasPolylines
     public function updatePolyline(Polyline $polyline): self
     {
         $this->polylines = collect($this->polylines)
-            ->map(fn($m) => $m['id'] === $polyline->getName() ? $polyline->toArray() : $m)
+            ->map(fn ($m) => $m['id'] === $polyline->getName() ? $polyline->toArray() : $m)
             ->toArray();
 
         return $this;

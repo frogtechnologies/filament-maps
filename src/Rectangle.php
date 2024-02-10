@@ -17,7 +17,7 @@ class Rectangle implements Arrayable
 
     protected string $name;
 
-    protected array | Closure $bounds;
+    protected array|Closure $bounds;
 
     final public function __construct(string $name)
     {
@@ -47,7 +47,7 @@ class Rectangle implements Arrayable
         return $this->name;
     }
 
-    public function bounds(array| Closure $bounds): static
+    public function bounds(array|Closure $bounds): static
     {
         $this->bounds = $bounds;
 
@@ -66,7 +66,7 @@ class Rectangle implements Arrayable
             'bounds' => $this->getBounds(),
             'options' => $this->getOptions(),
             'popup' => $this->getPopup(),
-            'tooltip'=> $this->getTooltip(),
+            'tooltip' => $this->getTooltip(),
         ];
     }
 }

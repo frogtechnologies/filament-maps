@@ -18,7 +18,7 @@ trait HasCircles
     protected function prepareCircles(array $data): array
     {
         return collect($data)
-            ->map(function (array | Circle $item) {
+            ->map(function (array|Circle $item) {
                 if ($item instanceof Circle) {
                     return $item->toArray();
                 }
@@ -38,7 +38,7 @@ trait HasCircles
     public function removeCircle(string $id): self
     {
         $this->circles = collect($this->circles)
-            ->filter(fn($circle) => $circle['id'] !== $id)
+            ->filter(fn ($circle) => $circle['id'] !== $id)
             ->toArray();
 
         return $this;
@@ -47,7 +47,7 @@ trait HasCircles
     public function updateCircle(Circle $circle): self
     {
         $this->circles = collect($this->circles)
-            ->map(fn($m) => $m['id'] === $circle->getName() ? $circle->toArray() : $m)
+            ->map(fn ($m) => $m['id'] === $circle->getName() ? $circle->toArray() : $m)
             ->toArray();
 
         return $this;

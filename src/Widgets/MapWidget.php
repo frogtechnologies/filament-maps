@@ -21,29 +21,28 @@ use Webbingbrasil\FilamentMaps\Concerns\HasTileLayer;
 
 abstract class MapWidget extends Widget implements HasForms, RendersFormComponentActionModal
 {
-    use HasExtraAttributes;
-    use HasExtraAlpineAttributes;
-    use EvaluatesClosures;
-    use HasTileLayer;
-    use HasActions;
-    use HasMapOptions;
-    use HasMarkers;
-    use HasPolylines;
-    use HasPolygones;
-    use HasRectangles;
-    use HasCircles;
-
     use Configurable {
         configure as protected configureWidget;
     }
+    use EvaluatesClosures;
+    use HasActions;
+    use HasCircles;
+    use HasExtraAlpineAttributes;
+    use HasExtraAttributes;
+    use HasMapOptions;
+    use HasMarkers;
+    use HasPolygones;
+    use HasPolylines;
+    use HasRectangles;
+    use HasTileLayer;
 
     protected static string $view = 'filament-maps::widgets.map';
 
     protected string $height = '400px';
 
-    protected string | Htmlable | null $heading = null;
+    protected string|Htmlable|null $heading = null;
 
-    protected string | Htmlable | null $footer = null;
+    protected string|Htmlable|null $footer = null;
 
     protected bool $hasBorder = true;
 
@@ -81,26 +80,26 @@ abstract class MapWidget extends Widget implements HasForms, RendersFormComponen
         return $this->height;
     }
 
-    public function heading(string | Htmlable | null $heading): self
+    public function heading(string|Htmlable|null $heading): self
     {
         $this->heading = $heading;
 
         return $this;
     }
 
-    public function getHeading(): string | Htmlable | null
+    public function getHeading(): string|Htmlable|null
     {
         return $this->heading;
     }
 
-    public function footer(string | Htmlable | null $footer): self
+    public function footer(string|Htmlable|null $footer): self
     {
         $this->footer = $footer;
 
         return $this;
     }
 
-    public function getFooter(): string | Htmlable | null
+    public function getFooter(): string|Htmlable|null
     {
         return $this->footer;
     }
