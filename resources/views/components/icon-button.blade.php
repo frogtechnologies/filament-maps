@@ -89,7 +89,7 @@
         />
 
         @if ($hasLoadingIndicator)
-            <x-filament-support::loading-indicator
+            <x-filament::loading-indicator
                 x-cloak
                 wire:loading.delay
                 :wire:target="$loadingIndicatorTarget"
